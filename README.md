@@ -7,8 +7,8 @@ Spring 3 and Hibernate with Annotations
 Declaring the messages in the model along with attributes
 Ex:
 @NotEmpty
-	@Size(min = 6, max = 15, message = "User custom message says, min size is 6 and max is 15 characters")
-	private String password;
+@Size(min = 6, max = 15, message = "User custom message says, min size is 6 and max is 15 characters")
+private String password;
 ```
 
 ```
