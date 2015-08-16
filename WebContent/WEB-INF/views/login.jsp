@@ -30,10 +30,10 @@
 	<h2 align="center">Login functionality implemented using Spring 3,
 		Hibernate and MySQL</h2>
 
-	<form:form action="login" commandName="loginForm" method="post">
+	<form:form action="login" commandName="myLoginForm" method="post">
 		<table align="center">
 			<tr>
-				<td colspan="2" align="center"><FONT color="red"><form:errors	path="userName" /></FONT></td>
+				<td colspan="2"><FONT color="red"><form:errors	path="userName" /></FONT></td>
 			</tr>
 			<tr>
 				<td class="right"><form:label path="userName">username :</form:label></td>

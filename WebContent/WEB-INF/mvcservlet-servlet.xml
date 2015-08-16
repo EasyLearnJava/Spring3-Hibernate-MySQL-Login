@@ -31,39 +31,32 @@
 	</bean>
 
 	<!-- All the messages to be written at a common location for re usability purpose  -->
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="/WEB-INF/message" />
 	</bean>
 	
-	<mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
-	<mvc:resources mapping="/images/**" location="/WEB-INF/images/"/>
 	<mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
 
-		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
         <property name="url"><value>jdbc:mysql://localhost:3306/Athena</value></property>
         <property name="username"><value>root</value></property>
         <property name="password"><value>password</value></property>
     </bean>
 
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-
-		<property name="dataSource" ref="dataSource"></property>
+	<bean id="sf" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="ds"></property>
 		<property name="annotatedClasses">
 			<list>
 				<value>com.easylearnjava.dto.User</value>
 			</list>
 		</property>
-
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
-	</bean>
-	
+	</bean>	
 
 </beans>
